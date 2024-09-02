@@ -23,5 +23,16 @@ public class Main {
             }
             System.out.println();
         }
+
+        System.out.print("Search a number from above array: ");
+        int num = sc.nextInt();
+
+        for (int i=0; i<row; i++){
+            for (int j=0; j<col; j++){
+                if (arr[i][j] == num){
+                    System.out.println("Positon of the number is: "+(i+1)+" "+(j+1));
+                }
+            }
+        }
     }
 }
