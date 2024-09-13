@@ -1,17 +1,20 @@
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args){
-        String email = "sarker1w4tu2@gamil.com";
-        String userName = "";
-        int length = 0;
+    public static void main (String[] args){
+        int []arr = {7, 8, 3, 1, 2};
 
-        for (int i=0; i<email.length(); i++){
-            if (email.charAt(i) == '@'){
-                break;
-            }else length +=1;
+        for (int i=0; i<=arr.length - 1; i++){
+            for (int j=0; j<arr.length-i-1; j++){
+                if(arr[j] > arr[j+1]){
+                    int temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                }
+            }
         }
-
-        System.out.println(email.substring(0, length));
+        for (int i=0; i<arr.length; i++){
+            System.out.print(arr[i]+" ");
+        }
     }
 }
