@@ -1,27 +1,26 @@
 import java.util.Scanner;
 
 public class Main {
-    public static void printArr (int []arrr){
-        for (int i=0; i<arrr.length; i++){
-            System.out.print(arrr[i]+" ");
+    public static void printArray(int ar[]){
+        for (int i=0; i<ar.length; i++){
+            System.out.print(ar[i]+" ");
         }
     }
     public static void main (String[] args){
-        int [] arr = {10,3,35};
-
-        for (int i=0; i<arr.length-1; i++){
-            int smallest = i;
-            for (int j=i ; j<arr.length-1; j++){
-                if (arr[smallest] > arr[j]){
-                    smallest = j;
-                }
-            }
-            int temp = arr[smallest];
-            arr[smallest] = arr[i];
-            arr[i] = temp;
-
-        }
-        printArr(arr);
-
+        //unsorted array
+        int []arr = {3,5,38,54,6};
+        //suppose 1st element is sorted, after all the unsorted arr
+        //unsorted array
+       for (int i=1; i<arr.length; i++){
+           int currentElement = arr[i];
+           int j = i-1;
+           while (j >= 0 && currentElement <arr[j]){
+               arr[j+1] = arr[j];
+               j--;
+           }
+           //placement
+           arr[j+1] = currentElement;
+       }
+        printArray(arr);
     }
 }
